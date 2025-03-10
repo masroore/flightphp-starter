@@ -24,7 +24,7 @@ $config = [
 
 $app->set($config);
 
-Debugger::enable(mode: !env('APP_DEBUG', false));
+Debugger::enable(mode: env_production());
 //Debugger::enable(Debugger::Development); // sometimes you have to be explicit (also Debugger::PRODUCTION)
 Debugger::$logDirectory = STORAGE_DIR . 'logs';
 #Debugger::$strictMode = true; // display all errors
