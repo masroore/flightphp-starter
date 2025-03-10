@@ -1,0 +1,30 @@
+services:
+  app:
+    image: php:8.4-alpine
+    working_dir: /var/www
+    command: php -S 0.0.0.0:80 -t public
+    environment:
+      docker: "true"
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    hostname: redis
+    volumes:
+      - redis:/data
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      retries: 3
+      timeout: 5s
+
+volumes:
+  redis:
+    driver: local
