@@ -1,6 +1,6 @@
 <?php
 
-Flight::before('start', static function () {
+Flight::before('start', static function (): void {
     Flight::response()->header('X-Frame-Options', 'SAMEORIGIN');
     Flight::response()->header('X-XSS-Protection', '1; mode=block');
     Flight::response()->header('X-Content-Type-Options', 'nosniff');

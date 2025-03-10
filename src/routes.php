@@ -7,7 +7,7 @@ use Rakit\Validation\Validator;
 /** @var Router $router */
 /** @var Engine $app */
 
-$router->get('/test', function () use ($app) {
+$router->get('/test', function () use ($app): void {
     #$request = $app->request()->data->getData();
     $request = $app->request()->query->getData();
     $validator = (new Validator)->make($request,
@@ -26,6 +26,6 @@ $router->get('/test', function () use ($app) {
     $app->render('home', ['title' => 'FlightPhp', 'name' => $request['name'], 'num' => $request['num']]);
 });
 
-$router->get('/(@name)', function (?string $name = null) use ($app) {
+$router->get('/(@name)', function (?string $name = null) use ($app): void {
     $app->render('home', ['title' => 'FlightPhp', 'name' => $name ?? 'world']);
 })->setAlias('home');

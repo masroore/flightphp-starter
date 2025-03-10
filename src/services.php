@@ -20,7 +20,7 @@ if (env_development()) {
 }
 
 // Configure Blade
-Flight::register('view', BladeOne::class, [], static function (BladeOne $blade) {
+Flight::register('view', BladeOne::class, [], static function (BladeOne $blade): void {
     $views = RESOURCES_DIR . 'views';
     $cache = STORAGE_DIR . 'cache';
 
