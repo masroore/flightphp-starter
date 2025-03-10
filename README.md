@@ -15,6 +15,9 @@ Ultra simple Flight boilerplate.
     composer install
     ```
 
+3. Copy `.env.example` to `.env` and update the values as needed.
+
+
 ## Docker Instructions
 
 1. Build the Docker image:
