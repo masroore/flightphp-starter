@@ -1,4 +1,9 @@
 {
+    "name": "masroore/flightphp-starter",
+    "description": "a tiny php boilerplate based on flight.",
+    "homepage": "https://github.com/masroore/flightphp-starter",
+    "type": "project",
+    "license": "MIT",
     "require": {
         "php": "^8.4",
         "flightphp/core": "^3.15",
