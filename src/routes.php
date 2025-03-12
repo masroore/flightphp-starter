@@ -6,9 +6,8 @@ use Rakit\Validation\Validator;
 
 /** @var Router $router */
 /** @var Engine $app */
-
 $router->get('/test', function () use ($app): void {
-    #$request = $app->request()->data->getData();
+    // $request = $app->request()->data->getData();
     $request = $app->request()->query->getData();
     $validator = (new Validator)->make($request,
         [
@@ -18,9 +17,9 @@ $router->get('/test', function () use ($app): void {
     );
     $validator->validate();
     if ($validator->fails()) {
-        echo "<pre>";
+        echo '<pre>';
         print_r($validator->errors()->firstOfAll());
-        echo "</pre>";
+        echo '</pre>';
         exit;
     }
     $app->render('home', ['title' => 'FlightPhp', 'name' => $request['name'], 'num' => $request['num']]);

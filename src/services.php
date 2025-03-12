@@ -3,7 +3,7 @@
 use eftec\bladeone\BladeOne;
 use flight\Engine;
 
-#use flight\debug\database\PdoQueryCapture;
+// use flight\debug\database\PdoQueryCapture;
 
 /**
  * @var array $config
@@ -15,8 +15,8 @@ use flight\Engine;
 
 if (env_development()) {
     // In development, you'll want the class that captures the queries for you. In production, not so much.
-    //$pdoClass = Debugger::$showBar === true ? PdoQueryCapture::class : PdoWrapper::class;
-    //$app->register('db', $pdoClass, [$dsn, $config['database']['user'] ?? null, $config['database']['password'] ?? null]);
+    // $pdoClass = Debugger::$showBar === true ? PdoQueryCapture::class : PdoWrapper::class;
+    // $app->register('db', $pdoClass, [$dsn, $config['database']['user'] ?? null, $config['database']['password'] ?? null]);
 }
 
 // Configure Blade
